@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="493.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Edu.Icet.Clothify_Store.Controller.StaffDashBoard.SearchProduct">
+   <children>
+      <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Report">
+         <font>
+            <Font name="Cambria" size="24.0" />
+         </font>
+      </Text>
+      <TableView layoutX="25.0" layoutY="109.0" prefHeight="295.0" prefWidth="542.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="75.0" text="Product Name" />
+            <TableColumn prefWidth="72.79998779296875" text="Qty" />
+            <TableColumn prefWidth="63.19993591308594" text="Price" />
+            <TableColumn prefWidth="149.5999755859375" text="Date" />
+            <TableColumn prefWidth="106.4000244140625" text="Counter Staff ID" />
+        </columns>
+      </TableView>
+      <Text layoutX="43.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <TextField layoutX="65.0" layoutY="64.0" style="-fx-background-radius: 10px;" />
+      <JFXButton layoutX="418.0" layoutY="425.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: green; -fx-background-radius: 10px;" text="Load Report" textFill="WHITE" />
+   </children>
+</AnchorPane>

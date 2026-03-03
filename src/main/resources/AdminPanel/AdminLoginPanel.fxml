@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="ancgerpane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Edu.Icet.Clothify_Store.Controller.AdminLogin.AdminLoginPanel">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="500.0" stroke="TRANSPARENT" strokeType="INSIDE" width="800.0">
+         <fill>
+            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3450980484485626" green="0.5960784554481506" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.43529412150382996" green="0.5058823823928833" blue="0.6235294342041016" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" height="473.0" layoutX="14.0" layoutY="14.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="344.0">
+         <fill>
+            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18039216101169586" green="0.11764705926179886" blue="0.3843137323856354" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.364705890417099" green="0.239215686917305" blue="0.7843137383460999" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="261.0" fitWidth="328.0" layoutX="22.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/point-of-sale-pos-solutions-sales-retail-computer-software-business-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="28.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" text="Clothify Store (POS System)" textAlignment="CENTER" wrappingWidth="316.64605712890625">
+         <font>
+            <Font name="Aldrich Regular" size="34.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="492.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/303593-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="473.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="AdminLog in to your Account">
+         <font>
+            <Font name="Dubai Medium" size="17.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="430.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UsertName/Email">
+         <font>
+            <Font name="Dubai Medium" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtUseName" layoutX="429.0" layoutY="268.0" prefHeight="26.0" prefWidth="270.0" style="-fx-background-radius: 10px;" />
+      <Text fill="WHITE" layoutX="430.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font name="Dubai Medium" size="14.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="txtPassword" layoutX="429.0" layoutY="331.0" prefHeight="26.0" prefWidth="270.0" style="-fx-background-radius: 10px;" />
+      <JFXButton layoutX="490.0" layoutY="395.0" onAction="#AdminPanelLoginDashBoard" prefHeight="26.0" prefWidth="161.0" style="-fx-background-color: #6330DA; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 1, 0, 0, 1);" text="Login Now" textFill="WHITE" />
+      <Hyperlink layoutX="502.0" layoutY="428.0" onAction="#BackToMainMenu" text="i want to go ro Main Menu" textFill="WHITE" />
+      <Hyperlink layoutX="600.0" layoutY="360.0" onAction="#ForgetPassword" text="Forger Password" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,11 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Edu.Icet.Clothify_Store.Controller.DashBoard"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="ancherpane" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Edu.Icet.Clothify_Store.Controller.DashBoard.DashBoard">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="500.0" stroke="TRANSPARENT" strokeType="INSIDE" width="800.0">
+         <fill>
+            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3450980484485626" green="0.5960784554481506" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.43529412150382996" green="0.5058823823928833" blue="0.6235294342041016" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="71.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" text="     Clothify Store (POS System)" wrappingWidth="656.6460571289062">
+         <font>
+            <Font name="Aldrich Regular" size="40.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" height="240.0" layoutX="96.0" layoutY="162.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="240.0">
+         <fill>
+            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18039216101169586" green="0.11764705926179886" blue="0.3843137323856354" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.364705890417099" green="0.239215686917305" blue="0.7843137383460999" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" height="240.0" layoutX="470.0" layoutY="162.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="240.0">
+         <fill>
+            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18039216101169586" green="0.11764705926179886" blue="0.3843137323856354" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.364705890417099" green="0.239215686917305" blue="0.7843137383460999" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="85.0" fitWidth="82.0" layoutX="175.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/475-4750705_school-administrator-icon-png-transparent-png-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="85.0" fitWidth="82.0" layoutX="549.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/303593-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="153.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN PANEL">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="531.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STAFF LOGIN">
+         <font>
+            <Font name="Dubai Medium" size="20.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="549.0" layoutY="315.0" onAction="#StaffPanelLogin" prefHeight="26.0" prefWidth="81.0" style="-fx-background-color: #6330DA; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 1, 0, 0, 1);" text="Click Me" textFill="WHITE" />
+      <JFXButton layoutX="175.0" layoutY="315.0" onAction="#AdminPanelLogin" prefHeight="26.0" prefWidth="81.0" style="-fx-background-color: #6330DA; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 1, 0, 0, 1);" text="Click Me" textFill="WHITE" />
+   </children>
 </AnchorPane>

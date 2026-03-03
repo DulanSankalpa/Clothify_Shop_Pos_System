@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="493.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ManageProduct">
+   <children>
+      <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Products">
+         <font>
+            <Font name="Cambria" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="30.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name" />
+      <TextField fx:id="p_name" layoutX="30.0" layoutY="96.0" prefHeight="26.0" prefWidth="119.0" style="-fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" />
+      <Text layoutX="169.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Size" />
+      <TextField fx:id="p_size" layoutX="169.0" layoutY="95.0" prefHeight="26.0" prefWidth="119.0" style="-fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" />
+      <Text layoutX="323.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category" />
+      <Text layoutX="455.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
+      <TableView fx:id="tblCollection" layoutX="30.0" layoutY="194.0" prefHeight="200.0" prefWidth="542.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
+        <columns>
+          <TableColumn fx:id="cal_id" prefWidth="43.200016021728516" text="ID" />
+          <TableColumn fx:id="cal_p_name" prefWidth="100.79998779296875" text="Product Name" />
+            <TableColumn fx:id="call_p_size" prefWidth="92.79997253417969" text="Size" />
+            <TableColumn fx:id="cal_p_catogory" prefWidth="120.79998779296875" text="Category" />
+            <TableColumn fx:id="call_p_price" prefWidth="99.20001220703125" text="Price" />
+            <TableColumn fx:id="call_p_qty" prefWidth="85.60003662109375" text="Qty" />
+        </columns>
+      </TableView>
+      <Button layoutX="46.0" layoutY="435.0" mnemonicParsing="false" onAction="#addproduct" prefHeight="26.0" prefWidth="126.0" style="-fx-background-color: green; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" text="Add New Product" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="193.0" layoutY="435.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="26.0" prefWidth="94.0" style="-fx-background-color: #EC7C04; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="468.0" layoutY="409.0" mnemonicParsing="false" onAction="#deleteproduct" prefHeight="26.0" prefWidth="82.0" style="-fx-background-color: red; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Button>
+      <JFXComboBox fx:id="cmb_catagory" layoutX="311.0" layoutY="96.0" prefHeight="26.0" prefWidth="119.0" />
+      <TextField fx:id="p_price" layoutX="450.0" layoutY="95.0" prefHeight="26.0" prefWidth="119.0" style="-fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" />
+      <Text layoutX="35.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty" />
+      <TextField fx:id="p_qty" layoutX="30.0" layoutY="155.0" prefHeight="26.0" prefWidth="119.0" style="-fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" />
+      <TextField fx:id="txt_id" layoutX="371.0" layoutY="409.0" prefHeight="26.0" prefWidth="82.0" style="-fx-background-radius: 10px;" />
+   </children>
+</AnchorPane>

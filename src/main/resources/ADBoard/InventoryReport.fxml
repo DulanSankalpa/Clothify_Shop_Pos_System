@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="493.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Edu.Icet.Clothify_Store.Controller.AdminDashBoard.InventoryReports">
+   <children>
+      <Text layoutX="25.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Report">
+         <font>
+            <Font name="Cambria" size="24.0" />
+         </font>
+      </Text>
+      <TableView layoutX="25.0" layoutY="81.0" prefHeight="200.0" prefWidth="542.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="75.0" text="Product Name" />
+            <TableColumn prefWidth="141.5998992919922" text="Size" />
+            <TableColumn prefWidth="116.00006103515625" text="Category" />
+            <TableColumn prefWidth="136.79998779296875" text="Qty" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" height="97.0" layoutX="95.0" layoutY="338.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="112.0">
+         <fill>
+            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18039216101169586" green="0.11764705926179886" blue="0.3843137323856354" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.364705890417099" green="0.239215686917305" blue="0.7843137383460999" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" height="97.0" layoutX="243.0" layoutY="338.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="112.0">
+         <fill>
+            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18039216101169586" green="0.11764705926179886" blue="0.3843137323856354" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.364705890417099" green="0.239215686917305" blue="0.7843137383460999" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="35.0" arcWidth="35.0" height="97.0" layoutX="396.0" layoutY="338.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="112.0">
+         <fill>
+            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.18039216101169586" green="0.11764705926179886" blue="0.3843137323856354" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.364705890417099" green="0.239215686917305" blue="0.7843137383460999" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Hyperlink layoutX="115.0" layoutY="377.0" text="Current Stock" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="268.0" layoutY="355.0" prefHeight="62.0" prefWidth="84.0" text="Low Stock" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="413.0" layoutY="353.0" prefHeight="62.0" prefWidth="84.0" text="Out Of Stock" textAlignment="CENTER" textFill="WHITE" />
+   </children>
+</AnchorPane>
