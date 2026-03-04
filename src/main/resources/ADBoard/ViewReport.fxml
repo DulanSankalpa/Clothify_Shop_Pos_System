@@ -18,16 +18,17 @@
             <Font name="Cambria" size="24.0" />
          </font>
       </Text>
-      <TableView layoutX="25.0" layoutY="81.0" prefHeight="200.0" prefWidth="542.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
+      <TableView fx:id="tblCollection" layoutX="25.0" layoutY="81.0" prefHeight="200.0" prefWidth="542.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="User Name" />
-            <TableColumn prefWidth="141.5998992919922" text="Email" />
-            <TableColumn prefWidth="116.00006103515625" text="Password" />
-            <TableColumn prefWidth="136.79998779296875" text="Roll Trype" />
+          <TableColumn fx:id="cal_id" prefWidth="44.000003814697266" text="ID" />
+          <TableColumn fx:id="cal_p_name" prefWidth="112.00006103515625" text="Product Name" />
+            <TableColumn fx:id="cal_size" prefWidth="55.99993896484375" text="Size" />
+            <TableColumn fx:id="cal_qty" prefWidth="67.20005798339844" text="Qty" />
+            <TableColumn fx:id="cal_price" prefWidth="98.39996337890625" text="Price" />
+            <TableColumn fx:id="cal_date_time" prefWidth="161.5999755859375" text="Date Time" />
         </columns>
       </TableView>
-      <Rectangle arcHeight="35.0" arcWidth="35.0" height="97.0" layoutX="95.0" layoutY="338.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="112.0">
+      <Rectangle arcHeight="35.0" arcWidth="35.0" height="97.0" layoutX="450.0" layoutY="325.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="112.0">
          <fill>
             <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
                <stops>
@@ -45,52 +46,10 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle arcHeight="35.0" arcWidth="35.0" height="97.0" layoutX="243.0" layoutY="338.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="112.0">
-         <fill>
-            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.18039216101169586" green="0.11764705926179886" blue="0.3843137323856354" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.364705890417099" green="0.239215686917305" blue="0.7843137383460999" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <Rectangle arcHeight="35.0" arcWidth="35.0" height="97.0" layoutX="396.0" layoutY="338.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="112.0">
-         <fill>
-            <LinearGradient endX="0.522727294401689" endY="1.0" startX="0.5227272799520781" startY="0.24621201284003985">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="0.18039216101169586" green="0.11764705926179886" blue="0.3843137323856354" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="0.364705890417099" green="0.239215686917305" blue="0.7843137383460999" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <Hyperlink layoutX="115.0" layoutY="377.0" text="Daly Report" textFill="WHITE">
+      <Hyperlink layoutX="459.0" layoutY="324.0" onAction="#daliyreport" prefHeight="98.0" prefWidth="93.0" text="    Daly Report" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Hyperlink>
-      <Hyperlink layoutX="260.0" layoutY="355.0" prefHeight="62.0" prefWidth="84.0" text="Monthly Salary " textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Hyperlink>
-      <Hyperlink layoutX="413.0" layoutY="353.0" prefHeight="62.0" prefWidth="84.0" text="Total Revenuw" textAlignment="CENTER" textFill="WHITE" />
    </children>
 </AnchorPane>

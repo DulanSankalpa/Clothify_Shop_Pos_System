@@ -60,6 +60,7 @@ public class plaseOrder implements Initializable {
             if (preparedStatement.executeUpdate()>0){
                 new Alert(Alert.AlertType.INFORMATION,"Order Placement Complete Thank You").show();
                 tabledata();
+                System.out.println("Hello");
             }else{
                 new Alert(Alert.AlertType.ERROR,"Fail Order Please Try Again").show();
             }

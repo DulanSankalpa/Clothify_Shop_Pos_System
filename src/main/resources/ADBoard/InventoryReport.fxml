@@ -18,13 +18,14 @@
             <Font name="Cambria" size="24.0" />
          </font>
       </Text>
-      <TableView layoutX="25.0" layoutY="81.0" prefHeight="200.0" prefWidth="542.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
+      <TableView fx:id="tblCollection" layoutX="25.0" layoutY="81.0" prefHeight="200.0" prefWidth="542.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="75.0" text="Product Name" />
-            <TableColumn prefWidth="141.5998992919922" text="Size" />
-            <TableColumn prefWidth="116.00006103515625" text="Category" />
-            <TableColumn prefWidth="136.79998779296875" text="Qty" />
+          <TableColumn fx:id="cal_id" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="cal_name" prefWidth="75.0" text="Product Name" />
+            <TableColumn fx:id="cal_size" prefWidth="94.39994812011719" text="Size" />
+            <TableColumn fx:id="cal_category" prefWidth="113.5999755859375" text="Category" />
+            <TableColumn fx:id="cal_qty" prefWidth="76.800048828125" text="Price" />
+            <TableColumn fx:id="cal_price" prefWidth="105.60001220703123" text="Qty" />
         </columns>
       </TableView>
       <Rectangle arcHeight="35.0" arcWidth="35.0" height="97.0" layoutX="95.0" layoutY="338.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);" width="112.0">
@@ -81,16 +82,16 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Hyperlink layoutX="115.0" layoutY="377.0" text="Current Stock" textFill="WHITE">
+      <Hyperlink layoutX="114.0" layoutY="344.0" onAction="#currentStock" prefHeight="91.0" prefWidth="84.0" text="Current Stock" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Hyperlink>
-      <Hyperlink layoutX="268.0" layoutY="355.0" prefHeight="62.0" prefWidth="84.0" text="Low Stock" textAlignment="CENTER" textFill="WHITE">
+      <Hyperlink layoutX="248.0" layoutY="355.0" onAction="#lowStock" prefHeight="62.0" prefWidth="104.0" text="       Low Stock" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="11.0" />
          </font>
       </Hyperlink>
-      <Hyperlink layoutX="413.0" layoutY="353.0" prefHeight="62.0" prefWidth="84.0" text="Out Of Stock" textAlignment="CENTER" textFill="WHITE" />
+      <Hyperlink layoutX="405.0" layoutY="338.0" onAction="#outofstock" prefHeight="98.0" prefWidth="95.0" text="   Out Of Stock" textAlignment="CENTER" textFill="WHITE" />
    </children>
 </AnchorPane>
