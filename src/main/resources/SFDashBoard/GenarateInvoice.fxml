@@ -15,18 +15,19 @@
             <Font name="Cambria" size="24.0" />
          </font>
       </Text>
-      <TableView layoutX="25.0" layoutY="109.0" prefHeight="295.0" prefWidth="542.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
+      <TableView fx:id="tblCollection" layoutX="25.0" layoutY="109.0" prefHeight="295.0" prefWidth="555.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 3);">
         <columns>
-          <TableColumn prefWidth="60.799991607666016" text="ID" />
-          <TableColumn prefWidth="89.60003662109375" text="Product Name" />
-            <TableColumn prefWidth="55.20001220703125" text="Qty" />
-            <TableColumn prefWidth="73.60002136230469" text="Price" />
-            <TableColumn prefWidth="100.800048828125" text="Counter Staff ID" />
-            <TableColumn prefWidth="162.4000244140625" text="Date" />
+          <TableColumn fx:id="cal_id" prefWidth="39.999942779541016" text="ID" />
+          <TableColumn fx:id="cal_name" prefWidth="86.39996337890625" text="Product Name" />
+            <TableColumn fx:id="cal_qty" prefWidth="59.20001220703125" text="Qty" />
+            <TableColumn fx:id="cal_price" prefWidth="67.19999694824219" text="Price" />
+            <TableColumn fx:id="cal_staff_id" prefWidth="73.60003662109375" text="Counter ID" />
+            <TableColumn fx:id="cal_total" prefWidth="82.39996337890625" text="Total" />
+            <TableColumn fx:id="cal_date" prefWidth="152.00006103515625" text="Date" />
         </columns>
       </TableView>
       <Text layoutX="43.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order ID" />
-      <TextField layoutX="100.0" layoutY="64.0" style="-fx-background-radius: 10px;" />
-      <JFXButton layoutX="418.0" layoutY="425.0" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: green; -fx-background-radius: 10px;" text="Load Report" textFill="WHITE" />
+      <TextField fx:id="txt_order_id" layoutX="100.0" layoutY="64.0" style="-fx-background-radius: 10px;" />
+      <JFXButton layoutX="418.0" layoutY="425.0" onAction="#loaddata" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: green; -fx-background-radius: 10px;" text="Load Report" textFill="WHITE" />
    </children>
 </AnchorPane>

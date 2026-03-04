@@ -50,7 +50,7 @@ public class ManageProduct implements Initializable {
             preparedStatement.setString(1,product.getName());
             preparedStatement.setString(2,product.getSize());
             preparedStatement.setString(3,product.getCmb());
-            preparedStatement.setInt(4,product.getPrice());
+            preparedStatement.setInt(4,product.getQty());
             preparedStatement.setInt(5,product.getPrice());
 
             if (preparedStatement.executeUpdate()>0){
