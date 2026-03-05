@@ -1,4 +1,4 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard;
+package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ViewReport;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ViewReport {
     public TableView tblCollection;
@@ -30,27 +31,22 @@ public class ViewReport {
         cal_qty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         cal_price.setCellValueFactory(new PropertyValueFactory<>("price"));
         cal_date_time.setCellValueFactory(new PropertyValueFactory<>("datetime"));
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT id,productname,size,qty,price,orderDateTime FROM Orders where DATE(orderDateTime) = CURRENT_DATE");
 
-            ArrayList<Order> orderList = new ArrayList<>();
-            while (resultSet.next()){
-                Order order = new Order(
-                        resultSet.getInt("id"),
-                        resultSet.getString("productname"),
-                        resultSet.getString("size"),
-                        resultSet.getInt("qty"),
-                        resultSet.getDouble("price"),          
-                        resultSet.getString("orderDateTime")
-                );
-                orderList.add(order);
-            }
-            tblCollection.setItems(FXCollections.observableArrayList(orderList));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        ViewReportimpl viewReportimpl = new ViewReportimpl();
+        List<Order> getOrder = viewReportimpl.GetOrder();
+
+        ArrayList<Order> OrderArray = new ArrayList<>();
+        getOrder.forEach(order ->{
+            OrderArray.add(new Order(
+                    order.getId(),
+                    order.getName(),
+                    order.getSize(),
+                    order.getQty(),
+                    order.getPrice(),
+                    order.getDatetime()
+            ));
+        });
+        tblCollection.setItems(FXCollections.observableArrayList(OrderArray));
 
 
     }

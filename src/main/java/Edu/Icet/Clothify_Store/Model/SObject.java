@@ -20,4 +20,7 @@ public class SObject {
         this.pw = pw;
         this.cmd = cmd;
     }
+
+    public SObject(String text, String text1, String text2, String string, String text3) {
+    }
 }

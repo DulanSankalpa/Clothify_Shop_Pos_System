@@ -98,4 +98,13 @@ public class Order {
         this.counterid = counterid;
         this.datetime = datetime;
     }
+
+    public Order(int id, String name, String size, int qty, int counterid, String datetime) {
+        this.id = id;
+        this.name = name;
+        this.size = size;
+        this.qty = qty;
+        this.counterid = counterid;
+        this.datetime = datetime;
+    }
 }

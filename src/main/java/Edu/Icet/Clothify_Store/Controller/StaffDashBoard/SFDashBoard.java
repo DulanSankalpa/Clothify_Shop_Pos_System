@@ -30,7 +30,7 @@ public class SFDashBoard {
 
     public void SearchProduct(ActionEvent actionEvent) {
         try {
-            URL resource = getClass().getResource("/ADBoard/StaffMemberReport.fxml");
+            URL resource = getClass().getResource("/SFDashBoard/StaffMemberReport.fxml");
             assert resource!=null;
             Parent load = FXMLLoader.load(resource);
             ancherpane1.getChildren().clear();

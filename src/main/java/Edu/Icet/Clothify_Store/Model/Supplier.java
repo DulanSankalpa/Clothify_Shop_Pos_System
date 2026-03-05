@@ -20,4 +20,7 @@ public class Supplier {
         this.email = email;
         this.address = address;
     }
+
+    public Supplier(String text, String text1, String text2, String text3, String text4) {
+    }
 }

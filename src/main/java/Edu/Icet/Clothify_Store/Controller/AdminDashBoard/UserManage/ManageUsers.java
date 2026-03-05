@@ -1,5 +1,6 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard;
+package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.UserManage;
 
+import Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ProductManage.ManageProductimpl;
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.SObject;
 import com.jfoenix.controls.JFXComboBox;
@@ -36,26 +37,13 @@ public class ManageUsers implements Initializable {
 
         SObject staff = new SObject(username,email,pw,cmd);
 
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO staff (username,email,pw,rolltypr) values (?,?,?,?)");
-
-            preparedStatement.setString(1,staff.getUsername());
-            preparedStatement.setString(2,staff.getEmail());
-            preparedStatement.setString(3,staff.getPw());
-            preparedStatement.setString(4,staff.getCmd());
-
-            if (preparedStatement.executeUpdate()>0){
-                new Alert(Alert.AlertType.INFORMATION,"Added Successfully").show();
-                tabledata();
-                clean();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Fail Input Please Try Again").show();
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+       if (new ManagerUsersilmp().addUser(staff)){
+           new Alert(Alert.AlertType.INFORMATION,"Added Complete !").show();
+           tabledata();
+           clean();
+       }else{
+           new Alert(Alert.AlertType.ERROR,"Fail Added !").show();
+       }
 
 
     }
@@ -68,49 +56,36 @@ public class ManageUsers implements Initializable {
             return;
         }
 
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
+        SObject staff = new SObject(
+                txtusername.getText(),
+                txtemail.getText(),
+                txtpassword.getText(),
+                cmdbox.getValue().toString(),
+                txt_id.getText()
+        );
 
-            String sql = "UPDATE staff SET username=?, email=?, pw=?, rolltypr=? WHERE id=?";
-            PreparedStatement ps = connection.prepareStatement(sql);
 
-            ps.setString(1, txtusername.getText());
-            ps.setString(2, txtemail.getText());
-            ps.setString(3, txtpassword.getText());
-            ps.setString(4, cmdbox.getValue().toString());
-            ps.setInt(5, selected.getId());
-
-            if (ps.executeUpdate() > 0) {
-                new Alert(Alert.AlertType.INFORMATION, "Updated Successfully!").show();
-                tabledata();
-                clean();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Update Failed!").show();
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if(new ManagerUsersilmp().UpdateUser(staff)){
+            new Alert(Alert.AlertType.INFORMATION,"Update Complete !").show();
+            clean();
+            tabledata();
+        }else{
+            new Alert(Alert.AlertType.ERROR,"Fail Update !").show();
         }
+
+
     }
 
     public void delete(ActionEvent actionEvent) {
+        int id = Integer.parseInt(txt_id.getText());
 
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM staff WHERE id=?");
-            preparedStatement.setInt(1,Integer.parseInt(txt_id.getText()));
-            int i = preparedStatement.executeUpdate();
-            if (i>0){
-                new Alert(Alert.AlertType.INFORMATION,"Delete Complete").show();
-                tabledata();
-                clean();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Please Try Again").show();
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
+       if(new ManagerUsersilmp().deleteUser(id)){
+           new Alert(Alert.AlertType.INFORMATION,"Delete Complete !").show();
+           tabledata();
+           clean();
+       }else{
+           new Alert(Alert.AlertType.ERROR,"Fail Delete").show();
+       }
 
     }
 

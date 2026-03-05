@@ -1,42 +1,18 @@
-package Edu.Icet.Clothify_Store.Controller.StaffDashBoard;
+package Edu.Icet.Clothify_Store.Controller.StaffDashBoard.OrderID;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class GenOrderID {
-    public TextField txt_order_id;
-    public TableView tblCollection;
-    public TableColumn cal_id;
-    public TableColumn cal_name;
-    public TableColumn cal_qty;
-    public TableColumn cal_price;
-    public TableColumn cal_staff_id;
-    public TableColumn cal_total;
-    public TableColumn cal_date;
-
-    public void loaddata(ActionEvent actionEvent) {
-
-        cal_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        cal_name.setCellValueFactory(new PropertyValueFactory<>("name"));
-        cal_qty.setCellValueFactory(new PropertyValueFactory<>("qty"));
-        cal_price.setCellValueFactory(new PropertyValueFactory<>("price"));
-        cal_total.setCellValueFactory(new PropertyValueFactory<>("totalPrice"));
-        cal_staff_id.setCellValueFactory(new PropertyValueFactory<>("counterid"));
-        cal_date.setCellValueFactory(new PropertyValueFactory<>("datetime"));
-
-
+public class OrderServiceimpl implements OrderService{
+    @Override
+    public List<Order> getOrderRecode(int id) {
         try {
             Connection connection = dbConnection.getInstance().getConnection();
 
@@ -45,7 +21,7 @@ public class GenOrderID {
                             "SELECT id, productname, size, qty, counterStaffID, price, totalprice,orderDateTime FROM orders WHERE id=?"
                     );
 
-            preparedStatement.setInt(1, Integer.parseInt(txt_order_id.getText()));
+            preparedStatement.setInt(1,id);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -67,10 +43,11 @@ public class GenOrderID {
                 orderlist.add(order);
             }
 
-            tblCollection.setItems(FXCollections.observableArrayList(orderlist));
+            return orderlist;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return List.of();
     }
 }

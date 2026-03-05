@@ -1,4 +1,4 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard;
+package Edu.Icet.Clothify_Store.Controller.StaffDashBoard.SerachProduct;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
@@ -14,6 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class StaffMenberReport {
     public JFXTextField txt_product_name;
@@ -32,27 +33,22 @@ public class StaffMenberReport {
         cal_size.setCellValueFactory(new PropertyValueFactory<>("size"));
         cal_price.setCellValueFactory(new PropertyValueFactory<>("price"));
 
+        String name = txt_product_name.getText();
 
-        try {
-            Connection connection = dbConnection.getInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT id,productname,size,qty,price FROM product WHERE productname = ?");
-            preparedStatement.setString(1,txt_product_name.getText());
+        StaffReportimpl staffReportimpl = new StaffReportimpl();
+        List<Order> GetData = staffReportimpl.FindProduct(name);
 
-            ResultSet resultSet = preparedStatement.executeQuery();
-            ArrayList<Order> orderList = new ArrayList<>();
-            while (resultSet.next()){
-                Order order = new Order(
-                        resultSet.getInt(1),
-                        resultSet.getString(2),
-                        resultSet.getString(3),
-                        resultSet.getInt(4),
-                        resultSet.getDouble(5)
-                );
-                orderList.add(order);
-            }
-                tblCollection.setItems(FXCollections.observableArrayList(orderList));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        ArrayList<Order> getList = new ArrayList<>();
+        GetData.forEach(orders->{
+            getList.add(new Order(
+                    orders.getId(),
+                    orders.getName(),
+                    orders.getSize(),
+                    orders.getQty(),
+                    orders.getPrice()
+            ));
+        });
+
+        tblCollection.setItems(FXCollections.observableArrayList(getList));
     }
 }
