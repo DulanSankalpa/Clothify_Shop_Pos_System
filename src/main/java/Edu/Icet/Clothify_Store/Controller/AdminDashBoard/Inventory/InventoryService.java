@@ -5,7 +5,7 @@ import Edu.Icet.Clothify_Store.Model.Product;
 import java.util.List;
 
 public interface InventoryService {
-   List<Product> CurrentStock();
-   List<Product> LowStock();
-   List<Product> outofStock();
+    List<Product> CurrentStock();
+    List<Product> LowStock();
+    List<Product> outofStock();
 }

@@ -1,6 +1,5 @@
 package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.UserManage;
 
-import Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ProductManage.ManageProductimpl;
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.SObject;
 import com.jfoenix.controls.JFXComboBox;

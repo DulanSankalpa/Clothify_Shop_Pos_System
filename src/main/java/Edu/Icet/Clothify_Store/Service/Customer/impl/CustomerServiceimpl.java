@@ -1,15 +1,14 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ProductManage;
+package Edu.Icet.Clothify_Store.Service.Customer.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Product;
-import javafx.collections.FXCollections;
-import javafx.scene.control.Alert;
+import Edu.Icet.Clothify_Store.Service.Customer.CustomerSsrvice;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ManageProductimpl implements ProductService{
+public class CustomerServiceimpl implements CustomerSsrvice {
     @Override
     public boolean addproduct(Product product) {
         try {
@@ -22,7 +21,7 @@ public class ManageProductimpl implements ProductService{
             preparedStatement.setInt(4,product.getQty());
             preparedStatement.setInt(5,product.getPrice());
 
-           return preparedStatement.executeUpdate()>0;
+            return preparedStatement.executeUpdate()>0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

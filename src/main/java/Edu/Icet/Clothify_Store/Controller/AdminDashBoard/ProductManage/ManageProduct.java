@@ -2,6 +2,10 @@ package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ProductManage;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Product;
+import Edu.Icet.Clothify_Store.Service.Customer.CustomerSsrvice;
+import Edu.Icet.Clothify_Store.Service.Customer.impl.CustomerServiceimpl;
+import Edu.Icet.Clothify_Store.Service.ServiceFactory;
+import Edu.Icet.Clothify_Store.Util.ServiceType;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -35,6 +39,8 @@ public class ManageProduct implements Initializable {
     public TextField txt_id;
 
 
+     CustomerSsrvice servicetype =  ServiceFactory.getInstance().getServiceTyrpe(ServiceType.Customer);
+
     public void addproduct(ActionEvent actionEvent) {
         String Product_name = p_name.getText();
         String size = p_size.getText();
@@ -44,7 +50,7 @@ public class ManageProduct implements Initializable {
 
         Product product = new Product(Product_name,size,cmb,price,qty);
 
-        if(new ManageProductimpl().addproduct(product)){
+        if(servicetype.addproduct(product)){
             new Alert(Alert.AlertType.INFORMATION,"Product Added !").show();
             tabledata();
         }else{
@@ -64,7 +70,7 @@ public class ManageProduct implements Initializable {
                 Integer.parseInt(p_price.getText()),
                 Integer.parseInt(p_qty.getText()));
 
-        if(new ManageProductimpl().updateProduct(product)){
+        if(servicetype.updateProduct(product)){
             new Alert(Alert.AlertType.INFORMATION,"Product Updated !").show();
             tabledata();
             clean();
@@ -78,7 +84,7 @@ public class ManageProduct implements Initializable {
     public void deleteproduct(ActionEvent actionEvent) {
         int id = Integer.parseInt(txt_id.getText());
 
-        if(new ManageProductimpl().deleteproduct(id)){
+        if(servicetype.deleteproduct(id)){
             new Alert(Alert.AlertType.INFORMATION,"Delete Complete").show();
         }else {
             new Alert(Alert.AlertType.ERROR,"Fail Delete").show();;
@@ -108,8 +114,8 @@ public class ManageProduct implements Initializable {
         call_p_price.setCellValueFactory(new PropertyValueFactory<>("price"));
         call_p_qty.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
-        ManageProductimpl manageProductimpl = new ManageProductimpl();
-        List<Product> all = manageProductimpl.getAllProduct();
+        CustomerServiceimpl customerServiceimpl = new CustomerServiceimpl();
+        List<Product> all = customerServiceimpl.getAllProduct();
 
         ArrayList<Product> getdata = new ArrayList<>();
         all.forEach(product ->{

@@ -12,6 +12,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class InventoryReports {
     public TableView tblCollection;
     public TableColumn cal_id;
@@ -21,11 +22,12 @@ public class InventoryReports {
     public TableColumn cal_qty;
     public TableColumn cal_price;
 
+    InventoryServiceimpl inventoryServiceimpl = new InventoryServiceimpl();
     public void currentStock(ActionEvent actionEvent) {
        tableCollem();
 
-        InventoryReportimpl inventoryReportimpl = new InventoryReportimpl();
-        List<Product> getcurrentStock = inventoryReportimpl.CurrentStock();
+
+        List<Product> getcurrentStock = inventoryServiceimpl.CurrentStock();
 
         ArrayList<Product> ProductList= new ArrayList<>();
         getcurrentStock.forEach(Product ->{
@@ -45,8 +47,7 @@ public class InventoryReports {
     public void lowStock(ActionEvent actionEvent) {
         tableCollem();
 
-        InventoryReportimpl inventoryReportimpl = new InventoryReportimpl();
-        List<Product> lowStock = inventoryReportimpl.LowStock();
+        List<Product> lowStock = inventoryServiceimpl.LowStock();
 
         ArrayList<Product> productslisted = new ArrayList<>();
         lowStock.forEach(product ->{
@@ -65,8 +66,8 @@ public class InventoryReports {
 
     public void outofstock(ActionEvent actionEvent) {
         tableCollem();
-        InventoryReportimpl inventoryReportimpl = new InventoryReportimpl();
-        List<Product> getoutofstock = inventoryReportimpl.outofStock();
+
+        List<Product> getoutofstock = inventoryServiceimpl.outofStock();
 
         ArrayList<Product> outofstockArray =new ArrayList<>();
         getoutofstock.forEach(product->{

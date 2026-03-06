@@ -2,7 +2,7 @@ package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.Inventory;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Product;
-import javafx.collections.FXCollections;
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InventoryReportimpl implements InventoryService{
+public class InventoryServiceimpl implements Edu.Icet.Clothify_Store.Controller.AdminDashBoard.Inventory.InventoryService {
     @Override
     public List<Product> CurrentStock() {
         try {
