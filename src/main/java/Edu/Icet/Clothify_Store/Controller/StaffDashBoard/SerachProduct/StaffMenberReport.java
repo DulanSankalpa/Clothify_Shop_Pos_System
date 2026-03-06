@@ -2,6 +2,7 @@ package Edu.Icet.Clothify_Store.Controller.StaffDashBoard.SerachProduct;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
+import Edu.Icet.Clothify_Store.Service.StaffBranch.impl.SearchProductimpl;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -35,7 +36,7 @@ public class StaffMenberReport {
 
         String name = txt_product_name.getText();
 
-        StaffReportimpl staffReportimpl = new StaffReportimpl();
+        SearchProductimpl staffReportimpl = new SearchProductimpl();
         List<Order> GetData = staffReportimpl.FindProduct(name);
 
         ArrayList<Order> getList = new ArrayList<>();

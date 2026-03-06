@@ -1,8 +1,8 @@
-package Edu.Icet.Clothify_Store.Controller.StaffDashBoard.OrderID;
+package Edu.Icet.Clothify_Store.Service.StaffBranch.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
-import javafx.collections.FXCollections;
+import Edu.Icet.Clothify_Store.Service.StaffBranch.OrderService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderServiceimpl implements OrderService{
+public class OrderServiceimpl implements OrderService {
     @Override
     public List<Order> getOrderRecode(int id) {
         try {
@@ -50,4 +50,5 @@ public class OrderServiceimpl implements OrderService{
         }
         return List.of();
     }
+
 }

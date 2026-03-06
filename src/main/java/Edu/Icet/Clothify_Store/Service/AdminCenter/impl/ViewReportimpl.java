@@ -1,8 +1,8 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ViewReport;
+package Edu.Icet.Clothify_Store.Service.AdminCenter.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
-import javafx.collections.FXCollections;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.ViewReportService;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewReportimpl implements VieqReportServoceForm{
+public class ViewReportimpl implements ViewReportService {
     @Override
     public List<Order> GetOrder() {
         try {

@@ -1,7 +1,10 @@
 package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.Suppliyer;
 
-import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Supplier;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.SuppliyService;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.impl.SuppliyerServiceimpl;
+import Edu.Icet.Clothify_Store.Service.ServiceFactory;
+import Edu.Icet.Clothify_Store.Util.ServiceType;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -12,7 +15,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -30,6 +32,8 @@ public class SupplierMangemnt implements Initializable {
     public TableColumn call_email;
     public TableColumn call_address;
 
+    SuppliyService supplierMangemnt =  ServiceFactory.getInstance().getServiceTyrpe(ServiceType.SuppliyerService);
+
     public void addnewSuppliyers(ActionEvent actionEvent) {
 
         String s_name = txt_s_name.getText();
@@ -39,7 +43,7 @@ public class SupplierMangemnt implements Initializable {
 
         Supplier suppliyer = new Supplier(s_name,s_number,s_email,s_address);
 
-        if(new Suppliyerimpl().addsuppliyer(suppliyer)){
+        if(supplierMangemnt.addsuppliyer(suppliyer)){
             new Alert(Alert.AlertType.INFORMATION,"Added Complete ! ").show();
             clear();
             tabledata();
@@ -56,7 +60,7 @@ public class SupplierMangemnt implements Initializable {
                 txt_s_email.getText(),
                 txt_s_address.getText()
         );
-       if(new Suppliyerimpl().updatesuppiyer(supplier)){
+       if( supplierMangemnt.updatesuppiyer(supplier)){
            new Alert(Alert.AlertType.INFORMATION,"Update Complete !").show();
            tabledata();
            clear();
@@ -67,7 +71,7 @@ public class SupplierMangemnt implements Initializable {
 
     public void delete(ActionEvent actionEvent) {
         int id = Integer.parseInt(txt_s_id.getText());
-       if(new Suppliyerimpl().deletesuppiyer(id)){
+       if(supplierMangemnt.deletesuppiyer(id)){
            new Alert(Alert.AlertType.INFORMATION,"Delete Complete !").show();
            tabledata();
            clear();
@@ -83,7 +87,7 @@ public class SupplierMangemnt implements Initializable {
         call_email.setCellValueFactory(new PropertyValueFactory<>("email"));
         call_address.setCellValueFactory(new PropertyValueFactory<>("address"));
 
-        Suppliyerimpl suppliyerimpl = new Suppliyerimpl();
+        SuppliyerServiceimpl suppliyerimpl = new SuppliyerServiceimpl();
         List<Supplier> getAll = suppliyerimpl.getAll();
 
         ArrayList<Supplier> dataArray = new ArrayList<>();

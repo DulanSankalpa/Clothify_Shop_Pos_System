@@ -1,9 +1,8 @@
 package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ProductManage;
 
-import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Product;
-import Edu.Icet.Clothify_Store.Service.Customer.CustomerSsrvice;
-import Edu.Icet.Clothify_Store.Service.Customer.impl.CustomerServiceimpl;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.ManageProsuctService;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.impl.ManageProsuctimpl;
 import Edu.Icet.Clothify_Store.Service.ServiceFactory;
 import Edu.Icet.Clothify_Store.Util.ServiceType;
 import com.jfoenix.controls.JFXComboBox;
@@ -17,7 +16,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,7 +37,7 @@ public class ManageProduct implements Initializable {
     public TextField txt_id;
 
 
-     CustomerSsrvice servicetype =  ServiceFactory.getInstance().getServiceTyrpe(ServiceType.Customer);
+     ManageProsuctService servicetype =  ServiceFactory.getInstance().getServiceTyrpe(ServiceType.ManageProduct);
 
     public void addproduct(ActionEvent actionEvent) {
         String Product_name = p_name.getText();
@@ -114,8 +112,8 @@ public class ManageProduct implements Initializable {
         call_p_price.setCellValueFactory(new PropertyValueFactory<>("price"));
         call_p_qty.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
-        CustomerServiceimpl customerServiceimpl = new CustomerServiceimpl();
-        List<Product> all = customerServiceimpl.getAllProduct();
+        ManageProsuctimpl manageProsuctimpl = new ManageProsuctimpl();
+        List<Product> all = manageProsuctimpl.getAllProduct();
 
         ArrayList<Product> getdata = new ArrayList<>();
         all.forEach(product ->{

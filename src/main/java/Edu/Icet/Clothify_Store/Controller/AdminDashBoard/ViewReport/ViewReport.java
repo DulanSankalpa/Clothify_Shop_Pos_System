@@ -1,17 +1,13 @@
 package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.ViewReport;
 
-import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.impl.ViewReportimpl;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 

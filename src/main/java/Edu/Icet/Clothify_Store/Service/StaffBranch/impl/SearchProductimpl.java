@@ -1,9 +1,8 @@
-package Edu.Icet.Clothify_Store.Controller.StaffDashBoard.SerachProduct;
+package Edu.Icet.Clothify_Store.Service.StaffBranch.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
-import Edu.Icet.Clothify_Store.Model.Product;
-import javafx.collections.FXCollections;
+import Edu.Icet.Clothify_Store.Service.StaffBranch.SearchProductService;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StaffReportimpl implements StaffService{
+public class SearchProductimpl implements SearchProductService {
     @Override
     public List<Order> FindProduct(String name) {
         try {

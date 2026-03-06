@@ -1,14 +1,13 @@
 package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.Inventory;
 
-import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Product;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.impl.InventoryServiceimpl;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 

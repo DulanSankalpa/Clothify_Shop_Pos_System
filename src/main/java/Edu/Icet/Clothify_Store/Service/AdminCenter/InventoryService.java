@@ -1,4 +1,4 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.Inventory;
+package Edu.Icet.Clothify_Store.Service.AdminCenter;
 
 import Edu.Icet.Clothify_Store.Model.Product;
 

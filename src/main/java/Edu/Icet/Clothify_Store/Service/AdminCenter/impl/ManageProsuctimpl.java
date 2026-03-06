@@ -1,14 +1,14 @@
-package Edu.Icet.Clothify_Store.Service.Customer.impl;
+package Edu.Icet.Clothify_Store.Service.AdminCenter.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Product;
-import Edu.Icet.Clothify_Store.Service.Customer.CustomerSsrvice;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.ManageProsuctService;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerServiceimpl implements CustomerSsrvice {
+public class ManageProsuctimpl implements ManageProsuctService {
     @Override
     public boolean addproduct(Product product) {
         try {

@@ -1,13 +1,14 @@
-package Edu.Icet.Clothify_Store.Controller.StaffDashBoard.PlaseOrder;
+package Edu.Icet.Clothify_Store.Service.StaffBranch.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
+import Edu.Icet.Clothify_Store.Service.StaffBranch.PlaseOrderService;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlaseOrderimpl implements PlaseOrderService{
+public class PlaseOrderimpl implements PlaseOrderService {
     @Override
     public boolean addOrder(Order order) {
         try {

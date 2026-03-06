@@ -1,15 +1,14 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.StaffReport;
+package Edu.Icet.Clothify_Store.Service.AdminCenter.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
-import javafx.collections.FXCollections;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.StaffReport;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StaffReportimpl implements StaffService{
-    @Override
+public class StaffReportimpl implements StaffReport {
     public List<Order> getdata(int id) {
         try {
             Connection connection = dbConnection.getInstance().getConnection();

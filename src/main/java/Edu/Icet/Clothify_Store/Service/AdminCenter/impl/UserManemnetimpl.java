@@ -1,16 +1,15 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.UserManage;
+package Edu.Icet.Clothify_Store.Service.AdminCenter.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.SObject;
-import javafx.scene.control.Alert;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.ManamgementUser;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 
-public class ManagerUsersilmp implements ManageService {
-    @Override
+public class UserManemnetimpl implements ManamgementUser {
+
     public boolean addUser(SObject staff) {
         try {
             Connection connection = dbConnection.getInstance().getConnection();
@@ -62,10 +61,5 @@ public class ManagerUsersilmp implements ManageService {
             throw new RuntimeException(e);
         }
 
-    }
-
-    @Override
-    public List<SObject> getAll() {
-        return List.of();
     }
 }

@@ -2,6 +2,10 @@ package Edu.Icet.Clothify_Store.Controller.StaffDashBoard.PlaseOrder;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Order;
+import Edu.Icet.Clothify_Store.Service.ServiceFactory;
+import Edu.Icet.Clothify_Store.Service.StaffBranch.PlaseOrderService;
+import Edu.Icet.Clothify_Store.Service.StaffBranch.impl.PlaseOrderimpl;
+import Edu.Icet.Clothify_Store.Util.ServiceType;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -34,6 +38,8 @@ public class plaseOrder implements Initializable {
     public TableColumn call_total;
     public TableColumn call_counter;
 
+    PlaseOrderService plaseOrderService = ServiceFactory.getInstance().getServiceTyrpe(ServiceType.PlaseOrder);
+
     public void plaseOrder(ActionEvent actionEvent) {
 
         String name = txtx_p_ame.getText();
@@ -46,7 +52,7 @@ public class plaseOrder implements Initializable {
 
         double total = qty * price;
 
-        if(new PlaseOrderimpl().addOrder(order)){
+        if(plaseOrderService.addOrder(order)){
             new Alert(Alert.AlertType.INFORMATION,"Added Complete !").show();
             tabledata();
         }else{
@@ -109,7 +115,7 @@ public class plaseOrder implements Initializable {
         double total = qrt * price;
         Order order = new Order(id,name,size,qrt,price,total,counter);
 
-        if(new PlaseOrderimpl().updateOrder(order)){
+        if(plaseOrderService.updateOrder(order)){
             new Alert(Alert.AlertType.INFORMATION,"Update Completre !").show();
             tabledata();
         }else{
@@ -119,7 +125,7 @@ public class plaseOrder implements Initializable {
     public void delete(ActionEvent actionEvent) {
        int id = Integer.parseInt(txt_id.getText());
 
-       if(new PlaseOrderimpl().DeleteOrder(id)){
+       if(plaseOrderService.DeleteOrder(id)){
            new Alert(Alert.AlertType.INFORMATION,"Delete Recode !").show();
            tabledata();
        }

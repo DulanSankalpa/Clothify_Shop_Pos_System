@@ -1,15 +1,14 @@
-package Edu.Icet.Clothify_Store.Controller.AdminDashBoard.Suppliyer;
+package Edu.Icet.Clothify_Store.Service.AdminCenter.impl;
 
 import Edu.Icet.Clothify_Store.DB.dbConnection;
 import Edu.Icet.Clothify_Store.Model.Supplier;
-import javafx.collections.FXCollections;
-import javafx.scene.control.Alert;
+import Edu.Icet.Clothify_Store.Service.AdminCenter.SuppliyService;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Suppliyerimpl implements SuppliyerService{
+public class SuppliyerServiceimpl implements SuppliyService {
 
     @Override
     public boolean addsuppliyer(Supplier supplier) {
